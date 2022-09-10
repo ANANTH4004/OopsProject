@@ -73,37 +73,21 @@ namespace OopsProject
 
         public void FileWrite()
         {
-            FileStream fs3 = new FileStream("Subject.txt", FileMode.Open, FileAccess.Read);
-            StreamReader ss = null;
-
+            FileStream fs = new FileStream("Subject.txt", FileMode.Append, FileAccess.Write);
+            StreamWriter sr = null;
             try
             {
-                ss = new StreamReader(fs3);
-                bool LastLine = false;
-                while (!LastLine)
-                {
-                    Subject s = new Subject();
-                    String temp = ss.ReadLine();
-                    if (temp == null)
-                    {
-                        Console.WriteLine("Last Data reached...");
-                        break;
-                    }
-                    s.SubjectName = temp.Split('-')[0];
-                    s.SubCode = Convert.ToInt32(temp.Split('-')[1]);
-                    Subject.SubjectList.Add(s);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error Message = " + ex.Message);
-
+                sr = new StreamWriter(fs);
+                Console.WriteLine("Enter Subject Name :");
+                string name = Console.ReadLine();
+                Console.WriteLine("Enter Subject Code :");
+                string Class = Console.ReadLine();
+                sr.WriteLine(name + "-" + Class);
             }
             finally
             {
-                ss.Close();
-                fs3.Close();
+                sr.Close();
+                fs.Close();
 
             }
         }

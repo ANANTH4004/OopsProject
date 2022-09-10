@@ -33,7 +33,7 @@ namespace OopsProject
 		}
 		public static List<Teacher> TeacherList = new List<Teacher>();
 
-        public void ShowList()
+        public void PrintData()
         {
             foreach (var item in TeacherList)
             {

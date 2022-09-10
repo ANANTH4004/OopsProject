@@ -33,7 +33,7 @@ namespace OopsProject
 		//	set { _Section = value; }
 		//}
 		public static List<Student> StudentList = new List<Student>();
-		public void PrintStudent()
+		public void PrintData()
 		{
 			foreach (var item in StudentList)
 			{
@@ -58,6 +58,7 @@ namespace OopsProject
 			{
 				sr.Close();
 				fs.Close();
+				
 			}
 		}
         public void FileRead()
@@ -86,7 +87,7 @@ namespace OopsProject
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Error Message = " + ex.Message);
+                Console.WriteLine("Error Message form Student = " + ex.Message);
 
             }
             finally

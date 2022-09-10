@@ -10,5 +10,6 @@ namespace OopsProject
     {
         void FileRead();
         void FileWrite();
+        void PrintData();
     }
 }
