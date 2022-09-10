@@ -99,6 +99,28 @@ namespace OopsProject
                 fs2.Close();
             }
         }
+        public void SearchTeacher()
+        {
+            Console.WriteLine("Enter Teacher  Name: ");
+            string name = Console.ReadLine();
+            var Details = File.ReadLines("Teacher.txt").OrderBy((line => (line.Split('-')[1])))
+                 .ToList();
+            bool found = false;
+            foreach (var item in Details)
+            {
+
+                if (item.Contains(name))
+                {
+                    Console.WriteLine($"Teacher Name: {item.Split('-')[0]} \nClass   : {item.Split('-')[1]} \nSubject : {item.Split('-')[2]}" );
+                    found = true;
+
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Teacher Not found  please enter a valid Teacher Name");
+            }
+        }
 
 
     }

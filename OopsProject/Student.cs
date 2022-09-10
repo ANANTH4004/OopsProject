@@ -97,5 +97,27 @@ namespace OopsProject
 
             }
         }
+		public void SearchStudent()
+		{
+            Console.WriteLine("Enter a student name: ");
+            string name = Console.ReadLine();
+            var Details = File.ReadLines("Student.txt").OrderBy((line => (line.Split('-')[1])))
+                 .ToList();
+            bool found = false;
+            foreach (var item in Details)
+            {
+                
+                if (item.Contains(name))
+                {
+                    Console.WriteLine($"Name: {item.Split('-')[0]} \nClass Room  : {item.Split('-')[1]} ");
+                    found = true;
+                    
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Student Not found or student not in the list please enter a valid Student Name");
+            }
+        }
     }
 }

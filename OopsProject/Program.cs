@@ -82,7 +82,31 @@ namespace OopsProject
                                 break;
                         }
                         break;
+                    case 3:
+                        Console.WriteLine("1.Student 2.Teacher 3.Subject");
+                        int ch3 = Convert.ToInt32(Console.ReadLine());
+                        switch (ch3)
+                        {
+                            case 1:
+                                Student s = new Student();
+                                s.SearchStudent();
+                                break;
+                            case 2:
+                                Teacher t = new Teacher();
+                                t.SearchTeacher();
+
+                                break;
+                            case 3:
+                                Subject ss = new Subject();
+                                ss.SearchSubject();
+                                break;
+                            default:
+                                break;
+                        }
+                        break;
                     default:
+                    
+
                         break;
                 }
                 Console.WriteLine("Do you want to continue(Y/N) : ");

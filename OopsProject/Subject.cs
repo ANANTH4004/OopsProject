@@ -90,6 +90,30 @@ namespace OopsProject
                 fs.Close();
 
             }
+
+        }
+
+        public void SearchSubject()
+        {
+            Console.WriteLine("Enter Subject name: ");
+            string name = Console.ReadLine();
+            var Details = File.ReadLines("Subject.txt").OrderBy((line => (line.Split('-')[1])))
+                 .ToList();
+            bool found = false;
+            foreach (var item in Details)
+            {
+
+                if (item.Contains(name))
+                {
+                    Console.WriteLine($" Subject Name: {item.Split('-')[0]} \nSubject Code  : {item.Split('-')[1]} ");
+                    found = true;
+
+                }
+            }
+            if (!found)
+            {
+                Console.WriteLine("Subject  Not found  please enter a valid Subject Name");
+            }
         }
     }
 }
