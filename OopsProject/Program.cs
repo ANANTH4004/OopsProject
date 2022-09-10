@@ -16,10 +16,18 @@ namespace OopsProject
             //File.Create("Teacher.txt");
             //File.Create("Subject.txt"); 
             #endregion
-            FileRead f = new FileRead();
-            f.ReadFile();
             Student s = new Student();
+            s.FileWrite();
+            s.FileRead();
             s.PrintStudent();
+            Teacher t = new Teacher();
+            t.FileWrite();
+            t.FileRead();
+            t.ShowList();
+            Subject ss = new Subject();
+            ss.FileWrite();
+            ss.FileRead();
+            ss.PrintData();
         }
     }
 }

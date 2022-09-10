@@ -1,21 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace OopsProject
 {
-    public class FileRead
+    internal interface IFileOperaions
     {
-        
-        public void ReadFile()
-        {
-           
-           
-           
-
-        }
+        void FileRead();
+        void FileWrite();
     }
 }
