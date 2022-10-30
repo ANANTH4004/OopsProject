@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OopsProject
 {
-    internal interface IFileOperaions
+    public interface IFileOperaions
     {
         void FileRead();
         void FileWrite();

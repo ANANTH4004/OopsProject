@@ -65,7 +65,7 @@ namespace OopsProject
         }
         public void FileRead()
         {
-            FileStream fs2 = new FileStream("Teacher.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs2 = new FileStream("D:\\c#\\OopsProject\\OopsProject\\bin\\Debug\\Teacher.txt", FileMode.Open, FileAccess.Read);
             StreamReader swt = null;
             try
             {
@@ -120,6 +120,23 @@ namespace OopsProject
             {
                 Console.WriteLine("Teacher Not found  please enter a valid Teacher Name");
             }
+        }
+        public bool SearchByName(string data)
+        {
+            var Details = File.ReadLines("D:\\c#\\OopsProject\\OopsProject\\bin\\Debug\\Teacher.txt").OrderBy((line => (line.Split('-')[1])))
+                .ToList();
+
+
+            foreach (var item in Details)
+            {
+
+                if (item.Contains(data))
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
 
 

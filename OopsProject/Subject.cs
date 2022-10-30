@@ -36,7 +36,7 @@ namespace OopsProject
 		}
 		public void FileRead()
 		{
-            FileStream fs3 = new FileStream("Subject.txt", FileMode.Open, FileAccess.Read);
+            FileStream fs3 = new FileStream("D:\\c#\\OopsProject\\OopsProject\\bin\\Debug\\Subject.txt", FileMode.Open, FileAccess.Read);
             StreamReader ss = null;
 
             try
@@ -114,6 +114,23 @@ namespace OopsProject
             {
                 Console.WriteLine("Subject  Not found  please enter a valid Subject Name");
             }
+        }
+        public bool SearchByName(string data)
+        {
+            var Details = File.ReadLines("D:\\c#\\OopsProject\\OopsProject\\bin\\Debug\\Subject.txt").OrderBy((line => (line.Split('-')[1])))
+                .ToList();
+
+
+            foreach (var item in Details)
+            {
+
+                if (item.Contains(data))
+                {
+                    return true;
+                }
+            }
+            return false;
+
         }
     }
 }
